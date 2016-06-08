@@ -2,20 +2,16 @@
 #include <list>
 using namespace std;
 class Euler {
- private:
-  int start;
-  int end;
-
  public:
   Euler(int start, int end) {
-    this->start = start;
-    this->end = end;
+    this->start_ = start;
+    this->end_ = end;
   }
 
   int calculate() {
     int sum = 0;
     list<int> divisors;
-    for (int i = start; i < end; i++) {
+    for (int i = start_; i < end_; i++) {
       if (i % 3 == 0 || i % 5 == 0) {
         divisors.push_back(i);
         sum += i;
@@ -29,6 +25,9 @@ class Euler {
     cout << endl;
     return sum;
   }
+ private:
+  int start_;
+  int end_;
 };
 int main(int argc, char *args[]) {
   int start, end;
